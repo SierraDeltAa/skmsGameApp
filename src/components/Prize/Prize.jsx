@@ -21,7 +21,10 @@ const Prize = (props) => {
                 {/* <hr className="border border-gray-400 w-36 sm:w-48 mx-auto my-1" /> */}
                 <div>
                     <span>{props.value}</span>
-                    {props.isClaimed && <span className="text-red-600 text-5xl">Claimed</span>}
+                    {props.isClaimed &&
+                        <span className="text-red-600 text-5xl">
+                            Claimed
+                        </span>}
                 </div>
             </div>
         </div>
