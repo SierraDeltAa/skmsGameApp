@@ -4,6 +4,7 @@ import Content from "../../layouts/Content/Content";
 import Footer from "../../layouts/Footer/Footer";
 import { MainPageLayout } from "../../layouts/MainPageLayout/MainPageLayout";
 import { prizes } from "../../data/prizes";
+import { Modal } from "../../components/Modal/Modal";
 
 const MainPage = () => {
 
@@ -40,6 +41,7 @@ const MainPage = () => {
         const default_wait_time = 1000;
         setTimeout(() => { setPrizes(prizes); }, default_wait_time);
     }
+
 
     return <MainPageLayout onGameStarted={handleGameStart} isGameStarted={isGameStarted} allPrizes={allPrizes} />
 }

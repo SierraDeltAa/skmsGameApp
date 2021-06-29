@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Prize from "../../components/Prize/Prize";
 import { Button } from "../../components/Button/Button";
 
 const Content = (props) => {
-    
 
     return (
         <main className="flex flex-col h-screen justify-center items-center">
@@ -16,7 +15,7 @@ const Content = (props) => {
 
             <div className="grid grid-cols-3 gap-2">
                 {props.allPrizes.map((prize) => {
-                    return (<Prize title={prize.title} value={prize.value} key={prize.id} isClaimed={prize.isClaimed} />)
+                    return (<Prize handleClaimPrize={props.handleClaimPrize} title={prize.title} value={prize.value} key={prize.id} isClaimed={prize.isClaimed} />)
                 })}
             </div>
         </main>
