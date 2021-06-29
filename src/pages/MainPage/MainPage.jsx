@@ -4,6 +4,7 @@ import Content from "../../layouts/Content/Content";
 import Footer from "../../layouts/Footer/Footer";
 import { MainPageLayout } from "../../layouts/MainPageLayout/MainPageLayout";
 import { prizes } from "../../data/prizes";
+import { Modal } from "../../components/Modal/Modal";
 
 const MainPage = () => {
 
@@ -13,33 +14,34 @@ const MainPage = () => {
 
     const handleGameStart = () => {
         setGameState(true);
-        startGameTimer();
-        handleRandom();
-        console.log(`Global game state switching to ${isGameStarted}`)
+        handleRandomChoice();
     }
 
-    const handleRandom = () => {
-        let weight_arr = [];
-        prizes.forEach(prize => { weight_arr.push(prize.chance); });
-        let randomNumber = Math.floor(Math.random() * 100);
+    const handleRandomChoice = () => {
+        const max_percent = 100;
+        let all_chances = [];
+        prizes.forEach(prize => { all_chances.push(prize.chance); });
 
-        for (let index = 0; index < weight_arr.length; index++) {
-            const weight_prize = weight_arr[index];
+        let randomNumber = Math.floor(Math.random() * max_percent);
 
-            if (randomNumber <= weight_prize) {
+        for (let index = 0; index < all_chances.length; index++) {
+            const chance = all_chances[index];
+
+            if (randomNumber <= chance) {
                 prizes[index].isClaimed = true;
-                console.log(prizes[index]);
                 return startGameTimer();
-            } else {
-                randomNumber -= weight_prize;
+            }
+            else {
+                randomNumber -= chance;
             }
         }
     }
 
     const startGameTimer = () => {
         const default_wait_time = 1000;
-        setTimeout(() => { setPrizes(prizes); alert("Timeout") }, default_wait_time);
+        setTimeout(() => { setPrizes(prizes); }, default_wait_time);
     }
+
 
     return <MainPageLayout onGameStarted={handleGameStart} isGameStarted={isGameStarted} allPrizes={allPrizes} />
 }
