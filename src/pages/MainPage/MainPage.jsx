@@ -9,24 +9,14 @@ const MainPage = () => {
     const [allPrizes, setPrizes] = useState([]);
     const [isError, setError] = useState(null)
 
-
     const createCookie = (name,value,maxAge=84600)=>{
         document.cookie = `${name}=${value}; path=/; max-age=${maxAge};`;
-    }
-    const removeCookie = (name)=>{  
-    document.cookie = `${name}=; max-age=-1`;
-    }
-
-    const getCookie = ()=> {
-        let cookie = document.cookie.get({name:"alreadyPlayed"});
-        console.log("the cookie is " + cookie);
     }
 
     const isCookieExists = ()=>{
         if (document.cookie.length != 0 ){
-            getCookie()
-        return true;
-    }
+            return true;
+        }
     return false;
     }
 
@@ -34,7 +24,7 @@ const MainPage = () => {
     const handleGameStart = () => {
         setGameState(true);
         if(isCookieExists() == false){
-            createCookie("alreadyPlayed","true","86400")
+            createCookie("alreadyPlayed","true")
             setError(false);
             handleRandomChoice();
         }else{
@@ -48,7 +38,7 @@ const MainPage = () => {
         prizes.forEach(prize => { all_chances.push(prize.chance); });
 
         const orderNumbers = (a, b)=>{
-            return a - b
+            return b - a
         }
         all_chances = all_chances.sort(orderNumbers);
 
