@@ -1,8 +1,5 @@
 import Prize from "./classes/Prize";
 
-const chance = 100;
-// const rare_chance = 1/100;
-
 const p_1 = new Prize(0,"Yoga / Pilates","25% de remise",18);
 const p_2 = new Prize(1,"Zumba / HIIT","35% de remise",8);
 const p_3 = new Prize(2,"Forfait duo","40% de remise",14);

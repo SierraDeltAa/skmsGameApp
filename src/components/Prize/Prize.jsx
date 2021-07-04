@@ -15,15 +15,13 @@ const Prize = (props) => {
             <div className={props.isClaimed ? "flip-card-inner flip-card-inner-claimed" : "flip-card-inner"}>
                 <div style={logoStyle} className="h-48 w-60 md:h-36 md:w-48 bg-center bg-cover bg-no-repeat flip-card-front">
                 </div>
-                <div className="flip-card-back h-48 w-60 md:h-36 md:w-48">
-                    <div className="text-center text-xl my-2">
-                        <span>{props.title}</span>
-                    </div>
-                    <div className="text-center mt-4">
-                        <span>{props.value}</span>
-                    </div>
+                <div className="flip-card-back h-48 w-60 md:h-36 md:w-48 rounded-sm p-4 flex flex-col justify-center text-center ring-1 ring-green-600">
+                    <span className="md:text-sm font-thin tracking-tighter">Vous avez gagné</span>
+                    <hr className="border border-gray-600 border-opacity-50 md:my-2" />
+                    <span className="md:text-sm font-semibold tracking-tight text-green-600">{props.title}</span>
+                    <span className="md:text-sm font-extrabold tracking-tight text-green-600">{props.value}</span>
                     <div className="mx-auto text-center">
-                        {props.isClaimed && <Button onClick={props.handleClaimPrize} className="bg-green-600 text-white rounded tracking-wide transition duration-300 hover:bg-green-500 mt-6 md:mt-4 text-xs shadow-lg ">Réclamez votre prix</Button>}
+                        {props.isClaimed && <Button onClick={props.handleClaimPrize} className=" text-gray-600 rounded tracking-wide mt-6 md:mt-4 text-xs ring-1 ring-green-600 text-green-600">Réclamer votre prix</Button>}
                     </div>
                 </div>
             </div>
