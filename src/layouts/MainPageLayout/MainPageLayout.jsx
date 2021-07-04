@@ -8,10 +8,15 @@ export const MainPageLayout = (props) => {
 
     const [isModalVisible, setModalState] = useState(false);
     const [winnedPrize, setWinnedPrize] = useState({});
+    
 
     const handleClaimPrize = () => {
         setWinnedPrize(getWinnedPrize());
         setModalState(true);
+    }
+
+    const closeModal = () => {
+            setModalState(false);        
     }
 
     const getWinnedPrize = () => {
@@ -25,12 +30,15 @@ export const MainPageLayout = (props) => {
     return (
         <>
             <Header />
-            {isModalVisible && <Modal winnedPrize={winnedPrize} />}
+            {isModalVisible && <Modal winnedPrize={winnedPrize} closeModal={()=>{closeModal()}} />}
             <Content
                 onGameStarted={props.onGameStarted}
                 isGameStarted={props.isGameStarted}
                 allPrizes={props.allPrizes}
-                handleClaimPrize={handleClaimPrize} />
+                handleClaimPrize={handleClaimPrize} 
+                errorMessage={props.errorMessage}
+                />
+                
             <Footer />
         </>
     )

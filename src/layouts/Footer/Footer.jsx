@@ -8,12 +8,7 @@ const divStyle = {
 const Footer = () => {
 
 
-    return(
-        <>
-            <div className="w-screen h-12 bg-center sm:h-12 fixed inset-x-0 bottom-0" style={divStyle}>
-
-            </div>
-        </>
+    return(<div className="w-screen h-12 bg-center sm:h-12 fixed inset-x-0 bottom-0" style={divStyle}></div>
     )
 }
 

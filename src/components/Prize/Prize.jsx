@@ -1,27 +1,30 @@
 import React from "react";
-import imgUrl from "../../assets/img/darkblue-cam.jpg";
 import logo from "../../assets/img/logo.jpeg"
 import { Button } from "../Button/Button";
+import "./Prize.css"
+
 const Prize = (props) => {
 
-    const divStyle = {
-        backgroundImage: "url(" + imgUrl + ")"
-    }
     const logoStyle = {
         backgroundImage: "url(" + logo + ")"
     }
+
+
     return (
-        <div className="mx-auto bg-blue-50 my-1 shadow-lg">
-            <div style={logoStyle} className="h-48 w-64  bg-center bg-cover bg-no-repeat">
-            </div>
-            <div className="mx-auto">
-                <div className="text-center">
-                    <span>{props.title}</span>
+        <div className={props.isClaimed ? "mx-auto bg-blue-50 my-1 flip-card flip-card-claimed shadow-lg" : "mx-auto hidden md:flex bg-blue-50 my-1 flip-card shadow-lg"}>
+            <div className={props.isClaimed ? "flip-card-inner flip-card-inner-claimed" : "flip-card-inner"}>
+                <div style={logoStyle} className="h-48 w-60 md:h-36 md:w-48 bg-center bg-cover bg-no-repeat flip-card-front">
                 </div>
-                {/* <hr className="border border-gray-400 w-36 sm:w-48 mx-auto my-1" /> */}
-                <div>
-                    <span>{props.value}</span>
-                    {props.isClaimed && <Button onClick={props.handleClaimPrize} className="bg-green-600 text-white rounded tracking-wide">Réclamer</Button>}
+                <div className="flip-card-back h-48 w-60 md:h-36 md:w-48">
+                    <div className="text-center text-xl my-2">
+                        <span>{props.title}</span>
+                    </div>
+                    <div className="text-center mt-4">
+                        <span>{props.value}</span>
+                    </div>
+                    <div className="mx-auto text-center">
+                        {props.isClaimed && <Button onClick={props.handleClaimPrize} className="bg-green-600 text-white rounded tracking-wide transition duration-300 hover:bg-green-500 mt-6 md:mt-4 text-xs shadow-lg ">Réclamez votre prix</Button>}
+                    </div>
                 </div>
             </div>
         </div>
