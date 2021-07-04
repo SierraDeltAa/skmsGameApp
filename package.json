@@ -1,6 +1,6 @@
 {
-  "homepage": "http://SierraDeltAa.github.io/skmsGameApp",
-  "name": "skmsGameApp",
+  "homepage": "http://SierraDeltAa.github.io/skmsgameapp",
+  "name": "skmsgameapp",
   "version": "0.0.0",
   "main": "dist/index.html",
   "scripts": {
