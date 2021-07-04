@@ -47,8 +47,8 @@ export const ClaimCard = (props) => {
     }
 
     return (
-        <div className="w-80 flex flex-col bg-blue-50 p-5 relative rounded-md">
-            <div className="pt-4 flex flex-col w-4/5 mx-auto text-center justify-center">
+        <div className=" w-72 md:w-80 flex flex-col bg-blue-50 p-5 relative rounded-md">
+            <div className="pt-4 flex flex-col  md:w-4/5 mx-auto text-center justify-center">
                 {isGameFinished === true ? (
                     <div className="flex flex-col">
                         <img className="w-32 mx-auto mb-4" src={thumbPic}  />

@@ -1,6 +1,11 @@
 {
+  "homepage": "http://SierraDeltAa.github.io/skmsGameApp",
+  "name": "skmsGameApp",
   "version": "0.0.0",
+  "main": "dist/index.html",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
@@ -14,6 +19,7 @@
   "devDependencies": {
     "@vitejs/plugin-react-refresh": "^1.3.1",
     "autoprefixer": "^10.2.6",
+    "gh-pages": "^3.2.3",
     "postcss": "^8.3.5",
     "tailwindcss": "^2.2.4",
     "vite": "^2.3.8"
