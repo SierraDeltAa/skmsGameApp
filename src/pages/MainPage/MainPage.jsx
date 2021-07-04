@@ -5,7 +5,7 @@ import { prizes } from "../../data/prizes";
 const MainPage = () => {
 
     const [isGameStarted, setGameState] = useState(false);
-    // const [isChoiceMade, setChoiceState] = useState(false);
+    const [isGameFinished, setChoiceState] = useState(false);
     const [allPrizes, setPrizes] = useState([]);
     const [isError, setError] = useState(null)
 

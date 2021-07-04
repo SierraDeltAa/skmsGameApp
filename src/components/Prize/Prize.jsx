@@ -21,7 +21,7 @@ const Prize = (props) => {
                     <span className="md:text-sm font-semibold tracking-tight text-green-600">{props.title}</span>
                     <span className="md:text-sm font-extrabold tracking-tight text-green-600">{props.value}</span>
                     <div className="mx-auto text-center">
-                        {props.isClaimed && <Button onClick={props.handleClaimPrize} className=" text-gray-600 rounded tracking-wide mt-6 md:mt-4 text-xs ring-1 ring-green-600 text-green-600">Réclamer votre prix</Button>}
+                        {props.isClaimed && <Button onClick={props.handleClaimPrize} className="rounded tracking-wide mt-6 md:mt-3 text-xs ring-1 ring-green-600 text-green-600 transition duration-300 hover:bg-green-600 hover:text-white">Réclamer votre prix</Button>}
                     </div>
                 </div>
             </div>

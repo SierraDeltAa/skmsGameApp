@@ -31,11 +31,9 @@ const Content = (props) => {
               fonctionnels sur ce site
             </span>
           </div>
-
           <Button
             onClick={props.onGameStarted}
-            className={`bg-red-500 text-white w-24 flex items-center justify-around text-lg rounded-md tracking-wide`}
-          >
+            className={`bg-red-700 text-white w-24 flex items-center justify-around text-lg rounded-md tracking-wide transition duration-300 hover:bg-red-500`}>
             Jouer <GameIcon /> 
           </Button>
         </div>
@@ -43,7 +41,6 @@ const Content = (props) => {
 
       <div className="flex flex-col h-screen justify-center items-center">
         {props.errorMessage === true ? (
-          
           <div className="text-white flex flex-col text-center">
             <GameboyIcon className="w-32 text-white mx-auto" />
             <span className="text-lg font-bold tracking-tight">Oops...</span>

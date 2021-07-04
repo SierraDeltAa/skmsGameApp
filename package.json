@@ -6,6 +6,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "emailjs-com": "^3.1.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-mailto.js": "^2.2.2"
