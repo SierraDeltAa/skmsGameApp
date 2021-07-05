@@ -1,17 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Prize from "../../components/Prize/Prize";
 import { Button } from "../../components/Button/Button";
 import logo from "../../assets/img/logoSKMS.png";
 import GameIcon from './Icons/GameIcon';
 import GameboyIcon from './Icons/GameboyIcon';
-
+import ReactCountdownClock from "react-countdown-clock"
 import "./Content.module.css";
 
 const Content = (props) => {
-  useEffect(() => {
-    console.log(props.errorMessage);
-  }, [props.errorMessage]);
 
+
+  const [countdownComplete, setCountdownComplete] = useState(false);
+
+
+  const getCountdown = ()=>{
+    setCountdownComplete(true);
+  }
 
 
   return (
@@ -38,30 +42,38 @@ const Content = (props) => {
           </Button>
         </div>
       )}
-
       <div className="flex flex-col h-screen justify-center items-center">
         {props.errorMessage === true ? (
           <div className="text-white flex flex-col text-center">
             <GameboyIcon className="w-32 text-white mx-auto" />
             <span className="text-lg font-bold tracking-tight">Oops...</span>
             <span className="text-lg font-light">Vous avez déjà participé(e) aujourd'hui!</span>
-            <span className="text-md font-light">Retentez votre chance <span className="text-green-600">dès la semaine prochaine</span>.</span>
+            <span className="text-md font-light">Retentez votre chance <span className="text-green-600">dans trois jours</span>.</span>
           </div>
-        ) : (
+        ) : props.isCountdown === true &&  (
           <div className="flex flex-wrap mx-auto md:w-10/12 xl:w-5/12">
-            {props.allPrizes.map((prize) => {
-              return (
-                <div className="fade-in mx-auto">
-                  <Prize
-                    handleClaimPrize={props.handleClaimPrize}
-                    title={prize.title}
-                    value={prize.value}
-                    key={prize.id}
-                    isClaimed={prize.isClaimed}
-                  />
-                </div>
-              );
-            })}
+            <div className={countdownComplete === true ? "hidden" : "flex"}>
+              <ReactCountdownClock seconds={3}
+                      color="#B91C1C"
+                      alpha={0.9}
+                      size={300}
+                      onComplete={getCountdown} />
+            </div>
+            {countdownComplete === true && (
+              props.allPrizes.map((prize) => {
+                return (
+                  <div className="fade-in mx-auto">
+                    <Prize
+                      handleClaimPrize={props.handleClaimPrize}
+                      title={prize.title}
+                      value={prize.value}
+                      key={prize.id}
+                      isClaimed={prize.isClaimed}
+                    />
+                  </div>
+                );
+              })
+            )}
           </div>
         )}
       </div>

@@ -37,6 +37,7 @@ export const MainPageLayout = (props) => {
                 allPrizes={props.allPrizes}
                 handleClaimPrize={handleClaimPrize} 
                 errorMessage={props.errorMessage}
+                isCountdown={props.isCountdown}
                 />
                 
             <Footer />

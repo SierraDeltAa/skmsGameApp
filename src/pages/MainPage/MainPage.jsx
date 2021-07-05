@@ -5,11 +5,11 @@ import { prizes } from "../../data/prizes";
 const MainPage = () => {
 
     const [isGameStarted, setGameState] = useState(false);
-    const [isGameFinished, setChoiceState] = useState(false);
     const [allPrizes, setPrizes] = useState([]);
-    const [isError, setError] = useState(null)
+    const [isError, setError] = useState(null);
+    const [countdownStarted, setCountdown] = useState(null)
 
-    const createCookie = (name,value,maxAge=604800)=>{
+    const createCookie = (name,value,maxAge=259200)=>{
         document.cookie = `${name}=${value}; path=/; max-age=${maxAge};`;
     }
 
@@ -60,11 +60,13 @@ const MainPage = () => {
 
     const startGameTimer = () => {
         const default_wait_time = 3000;
-        setTimeout(() => { setPrizes(prizes); }, default_wait_time);
+        setCountdown(true);
+        setTimeout(() => { setPrizes(prizes); endGameTimer }, default_wait_time);
     }
 
 
-    return <MainPageLayout errorMessage={isError} onGameStarted={handleGameStart} isGameStarted={isGameStarted} allPrizes={allPrizes} />
+
+    return <MainPageLayout isCountdown={countdownStarted} errorMessage={isError} onGameStarted={handleGameStart} isGameStarted={isGameStarted} allPrizes={allPrizes} />
 }
 
 export default MainPage;
