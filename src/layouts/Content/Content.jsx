@@ -51,12 +51,12 @@ const Content = (props) => {
             <span className="text-md font-light">Retentez votre chance <span className="text-green-600">dans trois jours</span>.</span>
           </div>
         ) : props.isCountdown === true &&  (
-          <div className="flex flex-wrap mx-auto md:w-10/12 xl:w-5/12">
+          <div className="flex flex-wrap mx-auto  justify-center md:w-10/12 xl:w-5/12">
             <div className={countdownComplete === true ? "hidden" : "flex"}>
               <ReactCountdownClock seconds={3}
                       color="#B91C1C"
                       alpha={0.9}
-                      size={300}
+                      size={250}
                       onComplete={getCountdown} />
             </div>
             {countdownComplete === true && (
