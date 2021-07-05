@@ -1,6 +1,6 @@
 {
-  "homepage": "http://SierraDeltAa.github.io/skmsgameapp",
-  "name": "skmsgameapp",
+  "homepage": "http://SierraDeltAa.github.io/skmsGameApp",
+  "name": "skmsGameApp",
   "version": "0.0.0",
   "main": "dist/index.html",
   "scripts": {
@@ -14,6 +14,7 @@
     "dist": "^0.1.2",
     "emailjs-com": "^3.1.0",
     "react": "^17.0.0",
+    "react-countdown-circle-timer": "^2.5.3",
     "react-dom": "^17.0.0",
     "react-mailto.js": "^2.2.2"
   },

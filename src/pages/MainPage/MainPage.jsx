@@ -9,7 +9,7 @@ const MainPage = () => {
     const [allPrizes, setPrizes] = useState([]);
     const [isError, setError] = useState(null)
 
-    const createCookie = (name,value,maxAge=84600)=>{
+    const createCookie = (name,value,maxAge=604800)=>{
         document.cookie = `${name}=${value}; path=/; max-age=${maxAge};`;
     }
 

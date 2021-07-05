@@ -24,7 +24,7 @@ const Content = (props) => {
               JEU CONCOURS 100% GAGNANT
             </span>
             <span className="text-lg md:text-2xl font-thin tracking-tighter">
-              Remportez des bons d'achats ou des remises jusqu'a 100%.
+              Remportez des bons d'achats ou des remises jusqu'a 75%.
             </span>
             <span className="text-xs md:text-sm text-gray-400 font-light mt-0.5 md:mt-1">
               * En jouant à ce jeu vous acceptez l'utilisation des cookies
@@ -45,7 +45,7 @@ const Content = (props) => {
             <GameboyIcon className="w-32 text-white mx-auto" />
             <span className="text-lg font-bold tracking-tight">Oops...</span>
             <span className="text-lg font-light">Vous avez déjà participé(e) aujourd'hui!</span>
-            <span className="text-md font-light">Retentez votre chance <span className="text-green-600">dès demain</span>.</span>
+            <span className="text-md font-light">Retentez votre chance <span className="text-green-600">dès la semaine prochaine</span>.</span>
           </div>
         ) : (
           <div className="flex flex-wrap mx-auto md:w-10/12 xl:w-5/12">

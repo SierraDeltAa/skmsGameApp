@@ -37,7 +37,7 @@ export const ClaimCard = (props) => {
 
     function sendEmail(e){
         e.preventDefault();    
-        emailjs.sendForm('service_qpyqq0o', 'template_10113am', e.target, 'user_sSvmXMFiLDJ1nScL2gVpb')
+        emailjs.sendForm('service_6z725vz', 'template_w90k23k', e.target, 'user_BCQiZnv2t9LhNbLxgifwg')
         .then((result) => {
             console.log(result.text);
             setGameFinished(true);
@@ -47,7 +47,7 @@ export const ClaimCard = (props) => {
     }
 
     return (
-        <div className=" w-72 md:w-80 flex flex-col bg-blue-50 p-5 relative rounded-md">
+        <div className="w-72 md:w-80 flex flex-col bg-blue-50 p-5 relative rounded-md">
             <div className="pt-4 flex flex-col  md:w-4/5 mx-auto text-center justify-center">
                 {isGameFinished === true ? (
                     <div className="flex flex-col">
